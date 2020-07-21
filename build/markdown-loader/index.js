@@ -8,6 +8,7 @@ var renderHighlight = function(str, lang) {
 	if (!(lang && hljs.getLanguage(lang))) {
 		return '';
 	}
+	
 	return hljs.highlight(lang, str, true).value;
 };
 
@@ -48,7 +49,7 @@ var renderMd = function (html,fileName) {
     </script>`;
 
 	let htmlStr = $.html()
-	var result = `<template> <div class="demo-${fileName}">${htmlStr}</div> </template> \n  ${pageScript} \n  <style lang="scss">${styleStr}</style>`
+	var result = `<template> <div class="demo-${fileName}">${htmlStr}</div> </template> \n  ${pageScript} \n  <style lang="scss" scoped >${styleStr}</style>`
 
 	return result;
 }
@@ -57,7 +58,7 @@ var renderVueTemplate = function (content) {
 	let $ = cheerio.load(content,{
 		decodeEntities: false
 	})
-	console.log($.html());
+
 	let $style = $('style')
 	$style.remove()
 
@@ -82,24 +83,11 @@ var renderVueTemplate = function (content) {
 
 
 var parser = markdown('default',{
+	// 主要给markdown中不在demo::中的代码高亮
 	highlight: renderHighlight
 });
 
-const ensureVPre = function (markdown) {
-	if (markdown && markdown.renderer && markdown.renderer.rules) {
-		const rules = ['code_inline', 'code_block', 'fence']
-		const rendererRules = markdown.renderer.rules
-		rules.forEach(function (rule) {
-			if (typeof rendererRules[rule] === 'function') {
-				const saved = rendererRules[rule]
-				rendererRules[rule] = function () {
-					return saved.apply(this, arguments).replace(/(<pre|<code)/g, '$1 v-pre')
-				}
-			}
-		})
-	}
-}
-ensureVPre(parser)
+ 
 const defaultRender = parser.renderer.rules.fence;
 parser.renderer.rules.fence = (tokens, idx, options, env, self) => {
 	const token = tokens[idx];
@@ -112,10 +100,10 @@ parser.renderer.rules.fence = (tokens, idx, options, env, self) => {
 				</template>`;
 	}
 
-	return defaultRender(tokens, idx, options, env, self).replace('<code class="', '<code class="hljs ')
-		.replace('<code>', '<code class="hljs">')
+	return `<div class="code-common">${defaultRender(tokens, idx, options, env, self)}</div>` 
 };
 
+// 给table增加样式
 parser.renderer.rules.table_open = function () {
 	return '<table class="table">'
 }
@@ -137,6 +125,7 @@ parser.use(require('markdown-it-container'), 'demo', {
 		const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
 		if (tokens[idx].nesting === 1) {
 			const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
+			// 先把demo中的代码放到demo-block的之中，然后程序继续render fence，按照上面的fence规则渲染出代码部分，作为隐藏的查看代码。
 			return `<demo-block><div  class="kv-demo">${content}</div>`;
 		}
 		return '</demo-block>';
@@ -148,7 +137,7 @@ module.exports = function (source) {
 	this.cacheable && this.cacheable();
 	const {resourcePath=''}  = this
 	const fileName = path.basename(resourcePath,'.md')
-	console.log(fileName);
+	// @符号在markdown中是特殊符号
 	source = source.replace(/@/g, '__at__');
 
 	var content = parser.render(source).replace(/__at__/g, '@');
