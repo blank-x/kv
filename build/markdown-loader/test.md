@@ -1,36 +1,67 @@
-# showMore 显示更多
-----
-
-### 基础用法
-文本超出显示长度，折叠起来，通过len属性显示从何处开始折叠。
-
  
+
+# Tag 标签
+----
+### 基础用法
+由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。
+
 ::: demo
 ```html
-
- <kv-showmore 
-   :len='10' 
-   text='文本超出显示长度，折叠起来，通过len属性显示从何处开始折叠'>
- </kv-showmore>
-
+  <kv-tag>标签一</kv-tag>
+  <kv-tag type="success">标签二</kv-tag>
+  <kv-tag type="info">标签三</kv-tag>
+  <kv-tag type="warning">标签四</kv-tag>
+  <kv-tag type="danger">标签五</kv-tag>
 ```
 :::
 
-### 高级用法
-文本超出显示长度，折叠起来，展开后，可以通过```allow-fold```指定是否需要收起，也可通过```show-text```设置折叠时的文案，通过```hidden-text```设置收起的文案
- 
 
+
+### 可移除标签
+设置```closable```属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，它接受一个Boolean，true 为关闭。
+ 
 
 ::: demo
 ```html
-
- <kv-showmore allow-fold
-   :len='10' 
-   show-text='show'
-   hidden-text='hidden'
-   text='文本超出显示长度，折叠起来，通过len属性显示从何处开始折叠'>
- </kv-showmore>
-
+<kv-tag
+  :key="tag.name"
+  v-for="tag in dynamicTags"
+  closable
+  :disable-transitions="false"
+  @close="handleClose(tag)" :type="tag.color">
+  {{tag.name}}
+</kv-tag>
+<script>
+export default {
+    data() {
+      return {
+        dynamicTags: [{
+            name: '标签一',
+            color: 'primary' 
+        }, {
+           name: '标签二',
+           color: 'success' 
+        }, {
+           name: '标签三',
+           color: 'info'           
+        }, {
+            name: '标签四',
+            color: 'danger'
+        }]
+      };
+    },
+    methods: {
+      handleClose(tag) {
+        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      }
+    }
+  }
+</script>
+<style>
+.kv-tag{
+    margin-right: 8px;    
+}   
+</style>
 ```
 :::
 
@@ -38,7 +69,12 @@
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| len | 显示文本的长度 | Number | — | -1(不进行折叠) |
-| text | 类型 | String | - |  |
-| show-text | 折叠时需要显示文案 | String | — | 显示更多 |
-| hidden-text | 隐藏时需要显示文案 | String | — | 隐藏 |
+| name | 用于触发关闭事件时的回调 | Boolean | — | false |
+| color | 类型 | String |  `primary`, `success`, `error`, `warning`, `info` | primary |
+| closable | 是否可关闭 | Boolean | — | false |
+
+## Tag 事件
+
+| 事件名称      | 说明          | 返回值  |
+|---------- |-------------- |---------- |
+| close | 点击关闭按钮时触发 | event |

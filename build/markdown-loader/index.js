@@ -28,10 +28,10 @@ var renderMd = function (html,fileName) {
 
 
 	$('div.kv-demo').each((index, item) => {
-
-		let vueTeml =  renderVueTemplate($(item).html())
-
 		let componentName = `kv-demo${id}`
+		let vueTeml =  renderVueTemplate($(item).html(),componentName)
+
+		
 
 		$(item).replaceWith(`<template slot="source"><${componentName} /></template>`)
 
@@ -49,12 +49,12 @@ var renderMd = function (html,fileName) {
     </script>`;
 
 	let htmlStr = $.html()
-	var result = `<template> <div class="demo-${fileName}">${htmlStr}</div> </template> \n  ${pageScript} \n  <style lang="scss" scoped >${styleStr}</style>`
+	var result = `<template> <div class="demo-${fileName}">${htmlStr}</div> </template> \n  ${pageScript} \n  <style lang="scss"  >${styleStr}</style>`
 
 	return result;
 }
 
-var renderVueTemplate = function (content) {
+var renderVueTemplate = function (content,componentName) {
 	let $ = cheerio.load(content,{
 		decodeEntities: false
 	})
@@ -77,7 +77,7 @@ var renderVueTemplate = function (content) {
 	let templateStr = ''
 	templateStr = templateExecResult ? templateExecResult[1] : $.html()
 
-	let componentStr = `{template: \`<div>${templateStr}</div>\`,${componentOptionsStr}}`
+	let componentStr = `{template: \`<div class="${componentName}">${templateStr}</div>\`,${componentOptionsStr}}`
 	return componentStr
 };
 
@@ -143,6 +143,6 @@ module.exports = function (source) {
 	var content = parser.render(source).replace(/__at__/g, '@');
 
 	var result = renderMd(content,fileName)
-
+	console.log(result);
 	return result
 };
