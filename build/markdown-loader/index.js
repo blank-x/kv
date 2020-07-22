@@ -86,7 +86,21 @@ var parser = markdown('default',{
 	// 主要给markdown中不在demo::中的代码高亮
 	highlight: renderHighlight
 });
-
+const ensureVPre = function (markdown) {
+	if (markdown && markdown.renderer && markdown.renderer.rules) {
+		const rules = ['code_inline', 'code_block', 'fence']
+		const rendererRules = markdown.renderer.rules
+		rules.forEach(function (rule) {
+			if (typeof rendererRules[rule] === 'function') {
+				const saved = rendererRules[rule]
+				rendererRules[rule] = function () {
+					return saved.apply(this, arguments).replace(/(<pre|<code)/g, '$1 v-pre')
+				}
+			}
+		})
+	}
+}
+ensureVPre(parser)
  
 const defaultRender = parser.renderer.rules.fence;
 parser.renderer.rules.fence = (tokens, idx, options, env, self) => {
@@ -96,7 +110,7 @@ parser.renderer.rules.fence = (tokens, idx, options, env, self) => {
 	const isInDemoContainer = prevToken && prevToken.nesting === 1 && prevToken.info.trim().match(/^demo\s*(.*)$/);
 	if (token.info === 'html' && isInDemoContainer) {
 		return `<template slot="highlight">
-					<pre v-pre><code class="html">${hljs.highlight('html',token.content.replace(/^(\s*)|(\s*)$/g,'')).value}</code></pre>
+					${defaultRender(tokens, idx, options, env, self)}
 				</template>`;
 	}
 
@@ -143,6 +157,5 @@ module.exports = function (source) {
 	var content = parser.render(source).replace(/__at__/g, '@');
 
 	var result = renderMd(content,fileName)
-	console.log(result);
 	return result
 };
