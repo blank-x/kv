@@ -1,11 +1,4 @@
-"use strict";
-
-var _button = _interopRequireDefault(require("element-ui/lib/theme-chalk/button.css"));
-
-require("element-ui/lib/theme-chalk/base.css");
-
-var _button2 = _interopRequireDefault(require("element-ui/lib/button"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-Vue.component(_button2["default"].name, _Button);
+import _Button2 from "element-ui/lib/theme-chalk/button.css";
+import "element-ui/lib/theme-chalk/base.css";
+import _Button from "element-ui/lib/button";
+Vue.component(_Button.name, _Button);

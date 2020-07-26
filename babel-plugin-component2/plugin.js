@@ -153,7 +153,6 @@ function core(defaultLibraryName) {
           selectedMethods = Object.create(null);
           moduleArr = Object.create(null);
         },
-
         ImportDeclaration(path, { opts }) {
           const { node } = path;
           const { value } = node.source;
@@ -179,7 +178,6 @@ function core(defaultLibraryName) {
             }
           }
         },
-
         CallExpression(path, state) {
           const { node } = path;
           const file = (path && path.hub && path.hub.file) || (state && state.file);

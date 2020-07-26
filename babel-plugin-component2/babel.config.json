@@ -1,6 +1,6 @@
 {
   "presets": [["@babel/env",{
-    "modules": "commonjs"
+    "modules": false
   }]],
   "plugins": [
     ["./plugin.js", {
