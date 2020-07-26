@@ -1,0 +1,11 @@
+{
+  "presets": [["@babel/env",{
+    "modules": "commonjs"
+  }]],
+  "plugins": [
+    ["./plugin.js", {
+      "libraryName": "element-ui",
+      "styleLibraryName": "theme-chalk"
+    }]
+  ]
+}
