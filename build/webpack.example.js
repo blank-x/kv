@@ -1,11 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const fs = require('fs')
 
 
 // const config = require('./config');
@@ -17,7 +15,7 @@ const webpackConfig = {
   mode: process.env.NODE_ENV,
   entry: './examples/main.js',
   output: {
-    path: path.resolve(process.cwd(), './examples/Kv/'),
+    path: path.resolve(process.cwd(), './docs'),
     publicPath: process.env.CI_ENV || '',
     filename: '[name].[hash:7].js',
     chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
