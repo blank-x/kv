@@ -61,7 +61,7 @@ const webpackConfig = {
       {
         test: /\.(scss|css)$/,
         use: [
-          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+          'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -112,7 +112,9 @@ const webpackConfig = {
           preserveWhitespace: false
         }
       }
-    })
+    }),
+
+    new MiniCssExtractPlugin()
   ],
   optimization: {
     minimizer: []
