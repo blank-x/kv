@@ -36,10 +36,10 @@ export default {
   render(h) {
     return h(this.tag, {
       class: [
-        'kv-row',
+        'x-row',
         this.justify !== 'start' ? `is-justify-${this.justify}` : '',
         this.align !== 'top' ? `is-align-${this.align}` : '',
-        {'kv-row--flex': this.type === 'flex'}
+        {'x-row--flex': this.type === 'flex'}
       ],
       style: this.style
     }, this.$slots.default);

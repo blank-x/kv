@@ -1,5 +1,5 @@
 <template>
-  <div class="kv-button-group">
+  <div class="x-button-group">
     <slot></slot>
   </div>
 </template>

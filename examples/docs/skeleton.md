@@ -6,24 +6,24 @@
 
 ::: demo
 ```html
-<kv-row>
-    <kv-col :span="4">
-      <kv-skeleton></kv-skeleton>
-    </kv-col>
-    <kv-col :span="4" class="ml-10">
-      <kv-row>
-        <kv-col :span="12">
-          <kv-skeleton :proportion="0.2"></kv-skeleton>
-        </kv-col>
-        <kv-col :span="24" class="m-10">
-          <kv-skeleton :proportion="0.1"></kv-skeleton>
-        </kv-col>
-        <kv-col :span="24" class="m-10">
-          <kv-skeleton :proportion="0.1"></kv-skeleton>
-        </kv-col>                  
-      </kv-col>  
-    </kv-col>
-  </kv-row>
+<x-row>
+    <x-col :span="4">
+      <x-skeleton></x-skeleton>
+    </x-col>
+    <x-col :span="4" class="ml-10">
+      <x-row>
+        <x-col :span="12">
+          <x-skeleton :proportion="0.2"></x-skeleton>
+        </x-col>
+        <x-col :span="24" class="m-10">
+          <x-skeleton :proportion="0.1"></x-skeleton>
+        </x-col>
+        <x-col :span="24" class="m-10">
+          <x-skeleton :proportion="0.1"></x-skeleton>
+        </x-col>                  
+      </x-col>  
+    </x-col>
+  </x-row>
 ```
 :::
 
@@ -55,16 +55,16 @@ module.exports = {
 ```html
 <template>
   <div class="main-skeleton">
-    <kv-skeleton height="80px"></kv-skeleton>
+    <x-skeleton height="80px"></x-skeleton>
     <div>
       <div class="skeleton-container">
         <div class="skeleton">
-          <kv-skeleton height="300px"></kv-skeleton>
+          <x-skeleton height="300px"></x-skeleton>
         </div>
-        <kv-skeleton height="45px"></kv-skeleton>
+        <x-skeleton height="45px"></x-skeleton>
       </div>
       <div class="skeleton-bottom">
-        <kv-skeleton height="45px"></kv-skeleton>
+        <x-skeleton height="45px"></x-skeleton>
       </div>
     </div>
   </div>

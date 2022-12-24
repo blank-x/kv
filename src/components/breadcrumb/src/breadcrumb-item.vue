@@ -1,13 +1,13 @@
 <template>
-  <span class="kv-breadcrumb__item">
+  <span class="x-breadcrumb__item">
     <span
-      :class="['kv-breadcrumb__inner', to ? 'is-link' : '']"
+      :class="['x-breadcrumb__inner', to ? 'is-link' : '']"
       ref="link"
       role="link">
       <slot></slot>
     </span>
-    <i :class="separatorClass" class="kv-breadcrumb__separator" v-if="separatorClass"></i>
-    <span class="kv-breadcrumb__separator" role="presentation" v-else>{{separator}}</span>
+    <i :class="separatorClass" class="x-breadcrumb__separator" v-if="separatorClass"></i>
+    <span class="x-breadcrumb__separator" role="presentation" v-else>{{separator}}</span>
   </span>
 </template>
 <script>

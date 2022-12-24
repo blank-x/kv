@@ -34,10 +34,10 @@
     render(h) {
       const { type, tagSize, hit, effect } = this;
       const classes = [
-        'kv-tag',
-        type ? `kv-tag--${type}` : '',
-        tagSize ? `kv-tag--${tagSize}` : '',
-        effect ? `kv-tag--${effect}` : '',
+        'x-tag',
+        type ? `x-tag--${type}` : '',
+        tagSize ? `x-tag--${tagSize}` : '',
+        effect ? `x-tag--${effect}` : '',
         hit && 'is-hit'
       ];
       const tagEl = (
@@ -47,12 +47,12 @@
           on-click={ this.handleClick }>
           { this.$slots.default }
           {
-            this.closable && <i class="kv-tag__close kv-icon-close" on-click={ this.handleClose }></i>
+            this.closable && <i class="x-tag__close x-icon-close" on-click={ this.handleClose }></i>
           }
         </span>
       );
 
-      return this.disableTransitions ? tagEl : <transition name="kv-zoom-in-center">{ tagEl }</transition>;
+      return this.disableTransitions ? tagEl : <transition name="x-zoom-in-center">{ tagEl }</transition>;
     }
   };
 </script>

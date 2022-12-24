@@ -7,22 +7,22 @@
 ::: demo
 ```html
 
-<kv-row>
- <kv-col :span="24"><div class="grid-content bg-purple-dark"></div></kv-col>
-</kv-row>
-<kv-row class="m-10">
- <kv-col :span="8"><div class="grid-content bg-purple"></div></kv-col>
- <kv-col :span="8"><div class="grid-content bg-purple-light"></div></kv-col>
- <kv-col :span="8"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row class="m-10">
- <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
- <kv-col :span="4"><div class="grid-content bg-purple-light"></div></kv-col>
- <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
- <kv-col :span="4"><div class="grid-content bg-purple-light"></div></kv-col>
- <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
- <kv-col :span="4"><div class="grid-content bg-purple-light"></div></kv-col>
-</kv-row>
+<x-row>
+ <x-col :span="24"><div class="grid-content bg-purple-dark"></div></x-col>
+</x-row>
+<x-row class="m-10">
+ <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+ <x-col :span="8"><div class="grid-content bg-purple-light"></div></x-col>
+ <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row class="m-10">
+ <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+ <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+ <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+ <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+ <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+ <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+</x-row>
 
 ```
 :::
@@ -36,12 +36,12 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ```html
 
-<kv-row :gutter="20">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
+<x-row :gutter="20">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
 
 ```
 
@@ -55,21 +55,21 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ```html
 
-<kv-row :gutter="20">
-  <kv-col :span="16"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="8"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row :gutter="20" class="m-10">
-  <kv-col :span="8"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="8"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row :gutter="20" class="m-10">
-  <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="16"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="4"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
+<x-row :gutter="20">
+  <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
 
 ```
 
@@ -83,17 +83,17 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ```html
 
-<kv-row :gutter="20">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row :gutter="20" class="m-10">
-  <kv-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row :gutter="20" class="m-10">
-  <kv-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
+<x-row :gutter="20">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
 
 ```
 
@@ -108,31 +108,31 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ```html
 
-<kv-row type="flex" class="row-bg">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row type="flex" class="row-bg m-10" justify="center">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row type="flex" class="row-bg m-10" justify="end">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row type="flex" class="row-bg m-10" justify="space-between">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
-<kv-row type="flex" class="row-bg m-10" justify="space-around">
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :span="6"><div class="grid-content bg-purple"></div></kv-col>
-</kv-row>
+<x-row type="flex" class="row-bg">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="row-bg m-10" justify="center">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="row-bg m-10" justify="end">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="row-bg m-10" justify="space-between">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="row-bg m-10" justify="space-around">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
 
 ```
 
@@ -145,12 +145,12 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 ::: demo
 ```html
 
-<kv-row :gutter="10">
-  <kv-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></kv-col>
-  <kv-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></kv-col>
-  <kv-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></kv-col>
-</kv-row>
+<x-row :gutter="10">
+  <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></x-col>
+</x-row>
 
 ```
 

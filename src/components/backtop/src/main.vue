@@ -1,15 +1,15 @@
 <template>
-  <transition name="kv-fade-in">
+  <transition name="x-fade-in">
     <div
       :style="{
         'right': styleRight,
         'bottom': styleBottom
       }"
       @click.stop="handleClick"
-      class="kv-backtop"
+      class="x-backtop"
       v-if="visible">
       <slot>
-        <kv-icon name="caret-top"></kv-icon>
+        <x-icon name="caret-top"></x-icon>
       </slot>
     </div>
   </transition>

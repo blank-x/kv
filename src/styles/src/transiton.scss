@@ -1,19 +1,19 @@
-.kv-zoom-in-center-enter-active,
-.kv-zoom-in-center-leave-active {
+.x-zoom-in-center-enter-active,
+.x-zoom-in-center-leave-active {
   transition: all .3s cubic-bezier(.55,0,.1,1);
 }
-.kv-zoom-in-center-enter,
-.kv-zoom-in-center-leave-active {
+.x-zoom-in-center-enter,
+.x-zoom-in-center-leave-active {
   opacity: 0;
   transform: scaleX(0);
 }
 
-@keyframes kv-spinner {
+@keyframes x-spinner {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-@keyframes kv-opacity
+@keyframes x-opacity
 {
   0%   {opacity: 1;}
   10%   {opacity: 0.9;}

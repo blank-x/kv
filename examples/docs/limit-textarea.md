@@ -7,7 +7,7 @@ Limit 可以控制用户输入的字符数，```placeholder``` 指定初始输�
 ```html
 
 <div class="demo-block">
-<kv-limit :maxLen="10" placeholder="最多输入10个字符"></kv-limit>
+<x-limit :maxLen="10" placeholder="最多输入10个字符"></x-limit>
 </div>
 ```
 :::
@@ -19,7 +19,7 @@ Limit 可以控制用户输入的字符数，```placeholder``` 指定初始输�
 ```html
 
 <div class="demo-block">
-<kv-limit :max-len="10" placeholder="最多输入10个字符" isCut></kv-limit>
+<x-limit :max-len="10" placeholder="最多输入10个字符" isCut></x-limit>
 </div>
 ```
 :::
@@ -30,7 +30,7 @@ Limit 可以控制用户输入的字符数，```placeholder``` 指定初始输�
 :::demo
 ```html
 <div class="demo-block">
-<kv-limit :max-len="10" :rows="3" placeholder="最多输入10个字符" is-cut></kv-limit>
+<x-limit :max-len="10" :rows="3" placeholder="最多输入10个字符" is-cut></x-limit>
 </div>
 <script>
 export default {

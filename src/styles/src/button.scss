@@ -44,7 +44,7 @@
         border: 0;
     }
 
-    & [class*="kv-icon-"] {
+    & [class*="x-icon-"] {
         & + span {
             margin-left: 5px;
         }
@@ -82,7 +82,7 @@
             border-color: $--button-disabled-border-color;
         }
 
-        &.kv-button--text {
+        &.x-button--text {
             background-color: transparent;
         }
 
@@ -186,11 +186,11 @@
     display: inline-block;
     vertical-align: middle;
 
-    & > .kv-button {
+    & > .x-button {
         float: left;
         position: relative;
 
-        & + .kv-button {
+        & + .x-button {
             margin-left: 0;
         }
 
@@ -242,8 +242,8 @@
         }
     }
 
-    & > .kv-dropdown {
-        & > .kv-button {
+    & > .x-dropdown {
+        & > .x-button {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left-color: rgba($--color-white, 0.5);
@@ -251,7 +251,7 @@
     }
 
     @each $type in (primary, success, warning, danger, info) {
-        .kv-button--#{$type} {
+        .x-button--#{$type} {
             &:first-child {
                 border-right-color: rgba($--color-white, 0.5);
             }

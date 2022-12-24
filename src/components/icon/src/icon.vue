@@ -1,5 +1,5 @@
 <template>
-  <i :class="'kv-icon-' + name"></i>
+  <i :class="'x-icon-' + name">111</i>
 </template>
 
 <script>

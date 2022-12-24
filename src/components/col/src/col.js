@@ -45,29 +45,29 @@ export default {
       if (this[prop]) {
         classList.push(
           prop !== 'span'
-            ? `kv-col-${prop}-${this[prop]}`
-            : `kv-col-${this[prop]}`
+            ? `x-col-${prop}-${this[prop]}`
+            : `x-col-${this[prop]}`
         );
       }
     });
 
     ['xs', 'sm', 'md', 'lg'].forEach(size => {
       if (typeof this[size] === 'number') {
-        classList.push(`kv-col-${size}-${this[size]}`);
+        classList.push(`x-col-${size}-${this[size]}`);
       } else if (typeof this[size] === 'object') {
         let props = this[size];
         Object.keys(props).forEach(prop => {
           classList.push(
             prop !== 'span'
-              ? `kv-col-${size}-${prop}-${props[prop]}`
-              : `kv-col-${size}-${props[prop]}`
+              ? `x-col-${size}-${prop}-${props[prop]}`
+              : `x-col-${size}-${props[prop]}`
           );
         });
       }
     });
 
     return h(this.tag, {
-      class: ['kv-col', classList],
+      class: ['x-col', classList],
       style
     }, this.$slots.default);
   }

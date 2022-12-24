@@ -1,4 +1,4 @@
-.kv__loading-bar--bar {
+.x__loading-bar--bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,11 +10,11 @@
     background: #3FAAF5
 }
 
-.kv__loading-bar--error {
+.x__loading-bar--error {
     background: #ff4949
 }
 
-.kv__loading-bar--peg {
+.x__loading-bar--peg {
     display: block;
     position: absolute;
     right: 0;
@@ -26,7 +26,7 @@
     transform: rotate(3deg) translate(0, -4px)
 }
 
-.kv__loading-bar--spinner {
+.x__loading-bar--spinner {
     display: block;
     position: fixed;
     z-index: 1031;
@@ -34,7 +34,7 @@
     right: 15px
 }
 
-.kv__loading-bar--spinner .spinner-icon {
+.x__loading-bar--spinner .spinner-icon {
     width: 18px;
     height: 18px;
     box-sizing: border-box;
@@ -44,7 +44,7 @@
     border-radius: 50%
 }
 
-.kv__loading-bar--spinner .spinner-icon--error {
+.x__loading-bar--spinner .spinner-icon--error {
     border-top-color: #ff4949;
     border-left-color: #ff4949
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="main-skeleton">
-    <kv-skeleton height="80px"></kv-skeleton>
+    <x-skeleton height="80px"></x-skeleton>
     <div>
       <div class="skeleton-container">
         <div class="skeleton">
-          <kv-skeleton height="300px"></kv-skeleton>
+          <x-skeleton height="300px"></x-skeleton>
         </div>
-        <kv-skeleton height="45px"></kv-skeleton>
+        <x-skeleton height="45px"></x-skeleton>
       </div>
       <div class="skeleton-bottom">
-        <kv-skeleton height="45px"></kv-skeleton>
+        <x-skeleton height="45px"></x-skeleton>
       </div>
     </div>
   </div>

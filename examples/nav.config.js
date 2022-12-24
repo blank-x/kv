@@ -18,7 +18,7 @@ module.exports = {
     {
       "name": "index",
       "path": "/",
-      "type": "pages"
+      "redirect": "/giud"
     },
     {
       "name": "logs",

@@ -1,5 +1,5 @@
 <template>
-  <div aria-label="Breadcrumb" class="kv-breadcrumb" role="navigation">
+  <div aria-label="Breadcrumb" class="x-breadcrumb" role="navigation">
     <slot></slot>
   </div>
 </template>
@@ -25,7 +25,7 @@
     },
 
     mounted() {
-      const items = this.$el.querySelectorAll('.kv-breadcrumb__item');
+      const items = this.$el.querySelectorAll('.x-breadcrumb__item');
       if (items.length) {
         items[items.length - 1].setAttribute('aria-current', 'page');
       }

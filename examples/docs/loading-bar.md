@@ -9,9 +9,9 @@
 
 ```html
 <div class="demo-block">
-   <kv-button @click="start">开始</kv-button>
-   <kv-button @click="end">结束</kv-button>
-   <kv-button @click="error">错误</kv-button>
+   <x-button @click="start">开始</x-button>
+   <x-button @click="end">结束</x-button>
+   <x-button @click="error">错误</x-button>
 </div>
 <script>
   export default{
@@ -38,10 +38,10 @@
 
 ```html
 <div class="demo-block">
-   <kv-button @click="setSpeed">设置speed速度</kv-button>
-   <kv-button @click="setSpinner">设置spinner动画效果</kv-button>
-   <kv-button @click="setPercentNum">设置percentNum每次加载的比例</kv-button>
-   <kv-button @click="setShowSpinner">设置是否显示spinner</kv-button>
+   <x-button @click="setSpeed">设置speed速度</x-button>
+   <x-button @click="setSpinner">设置spinner动画效果</x-button>
+   <x-button @click="setPercentNum">设置percentNum每次加载的比例</x-button>
+   <x-button @click="setShowSpinner">设置是否显示spinner</x-button>
 </div>
 <script>
   export default{

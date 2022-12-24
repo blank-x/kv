@@ -3,7 +3,7 @@
 # Icon 图标
 
 ----
-语义化的矢量图形，```KV-UI``` 使用开源的 Iconfont (阿里妈妈MUX倾力打造的矢量图标管理、交流平台) 作为图标库，并制作成了 ```icon font```。
+语义化的矢量图形，直接把element-ui里面的字体借了过来。
 ### 如何使用
 
 使用 ```class="icon"``` 来声明图标，具体图标的名称请 ```copy``` 相应的标签
@@ -11,8 +11,9 @@
 ::: demo
 ```html
 
-<i class="kv-icon-close fs-24"></i>
-<i class="kv-icon-link fs-24"></i>
+<i class="x-icon-phone fs-24"></i>
+<i class="x-icon-close fs-24"></i>
+<i class="x-icon-link fs-24"></i>
 
 ```
 :::
@@ -24,7 +25,7 @@
   <li v-for="name in icons" :key="name">
     <span>
       <i :class=" iconPre+ name"></i>
-      {{'kv-' + name}}
+      {{'x-' + name}}
     </span>
   </li>
 </ul>
@@ -33,7 +34,7 @@
     data() {
       return {
         icons: require('../icon.json'),
-        iconPre:'kv-icon-'
+        iconPre:'x-icon-'
       };
     }
   }

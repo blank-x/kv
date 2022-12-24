@@ -6,7 +6,8 @@
   "scripts": {
     "build:js": "webpack --config ./build/webpack.common.js && webpack --config ./build/webpack.component.js",
     "build:style": "gulp build --gulpfile src/styles/gulpfile.js",
-    "example": "webpack-dev-server --config ./build/webpack.example.js"
+    "doc:dev": "NODE_ENV=development webpack-dev-server --config ./build/webpack.example.js",
+    "doc:build": "NODE_ENV=production webpack --config ./build/webpack.example.js"
   },
   "author": "zsy",
   "license": "ISC",

@@ -7,11 +7,11 @@
 
 ::: demo
 ```html
-  <kv-tag>标签一</kv-tag>
-  <kv-tag type="success">标签二</kv-tag>
-  <kv-tag type="info">标签三</kv-tag>
-  <kv-tag type="warning">标签四</kv-tag>
-  <kv-tag type="danger">标签五</kv-tag>
+  <x-tag>标签一</x-tag>
+  <x-tag type="success">标签二</x-tag>
+  <x-tag type="info">标签三</x-tag>
+  <x-tag type="warning">标签四</x-tag>
+  <x-tag type="danger">标签五</x-tag>
 ```
 :::
 
@@ -23,14 +23,14 @@
 
 ::: demo
 ```html
-<kv-tag
+<x-tag
   :key="tag.name"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
   @close="handleClose(tag)" :type="tag.color">
   {{tag.name}}
-</kv-tag>
+</x-tag>
 <script>
 export default {
     data() {
@@ -58,7 +58,7 @@ export default {
   }
 </script>
 <style>
-.kv-tag{
+.x-tag{
     margin-right: 8px;    
 }   
 </style>

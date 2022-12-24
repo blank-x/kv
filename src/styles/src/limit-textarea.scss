@@ -1,4 +1,4 @@
-.kv__limit--textarea {
+.x__limit--textarea {
     border: 1px solid #d1dbe5;
     display: block;
     resize: vertical;
@@ -13,15 +13,15 @@
     transition: border-color .2s cubic-bezier(.645, .045, .355, 1)
 }
 
-.kv__limit--textarea:focus {
+.x__limit--textarea:focus {
     border: 1px solid #3FAAF5
 }
 
-.kv__limit--over {
+.x__limit--over {
     border: 1px solid #ff4949
 }
 
-.kv__limit--text {
+.x__limit--text {
     position: absolute;
     bottom: 5px;
     right: 5px;
@@ -29,10 +29,10 @@
     color: #d1dbe5
 }
 
-.kv__limit--num {
+.x__limit--num {
     color: #13ce66
 }
 
-.kv__limit--num-over {
+.x__limit--num-over {
     color: #ff4949
 }

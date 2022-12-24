@@ -3,8 +3,7 @@
           class="page-header">
 
     <div class="header-container">
-      <router-link :to="{name: 'index'}"><img src="../assets/img/logo.jpg" width="100"></router-link>
-      <router-link :to="{name: 'giud'}">组件</router-link>
+      <router-link :to="{name: 'index'}">测试组件库</router-link>
     </div>
   </header>
 </template>

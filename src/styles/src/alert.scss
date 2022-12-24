@@ -16,16 +16,16 @@
     transition: opacity .2s;
 
     @include when(light) {
-        .kv-alert__closebtn {
+        .x-alert__closebtn {
             color: $--color-text-placeholder;
         }
     }
 
     @include when(dark) {
-        .kv-alert__closebtn {
+        .x-alert__closebtn {
             color: $--color-white;
         }
-        .kv-alert__description {
+        .x-alert__description {
             color: $--color-white;
         }
     }
@@ -39,7 +39,7 @@
             background-color: $--alert-success-color;
             color: $--color-success;
 
-            .kv-alert__description {
+            .x-alert__description {
                 color: $--color-success;
             }
         }
@@ -61,7 +61,7 @@
             color: $--color-white;
         }
 
-        .kv-alert__description {
+        .x-alert__description {
             color: $--color-info;
         }
     }
@@ -71,7 +71,7 @@
             background-color: $--alert-warning-color;
             color: $--color-warning;
 
-            .kv-alert__description {
+            .x-alert__description {
                 color: $--color-warning;
             }
         }
@@ -87,7 +87,7 @@
             background-color: $--alert-danger-color;
             color: $--color-danger;
 
-            .kv-alert__description {
+            .x-alert__description {
                 color: $--color-danger;
             }
         }
@@ -120,7 +120,7 @@
         }
     }
 
-    & .kv-alert__description {
+    & .x-alert__description {
         font-size: $--alert-description-font-size;
         margin: 5px 0 0 0;
     }
@@ -141,7 +141,7 @@
     }
 }
 
-.kv-alert-fade-enter,
-.kv-alert-fade-leave-active {
+.x-alert-fade-enter,
+.x-alert-fade-leave-active {
     opacity: 0;
 }

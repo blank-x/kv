@@ -10,7 +10,7 @@ const fs = require('fs')
 
 // const config = require('./config');
 
-
+console.log(process.env.NODE_ENV)
 const isProd = process.env.NODE_ENV === 'production';
 
 const webpackConfig = {
@@ -79,16 +79,20 @@ const webpackConfig = {
 
       },
       {
-        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+        test: /\.(svg|otf|gif|png|jpe?g)(\?\S*)?$/i,
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 10000,
+            limit: 100,
             name: path.posix.join('static', '[name].[hash:7].[ext]'),
             esModule: false,
           }
         }]
 
+      },
+      {
+        test: /\.(ttf|woff)$/i,
+        type: "asset/resource"
       }
     ]
   },

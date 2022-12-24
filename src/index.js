@@ -1,31 +1,31 @@
-import KvAlert from './components/alert'
-import KvBacktop from './components/backtop'
-import KvBreadcrumbItem from './components/breadcrumb-item'
-import KvButton from './components/button'
-import KvIcon from './components/icon'
-import KvTag from './components/tag'
-import KvSkeleton from './components/skeleton'
-import KvRow from './components/row'
-import KvCol from './components/col'
-import KvShowmore from './components/show-more'
-import KvLimit  from './components/limit-textarea'
-import KvLoadingBar  from './components/loading-bar'
-import KvMetaInfo  from './components/meta-info'
+import XAlert from './components/alert'
+import XBacktop from './components/backtop'
+import XBreadcrumbItem from './components/breadcrumb-item'
+import XButton from './components/button'
+import XIcon from './components/icon'
+import XTag from './components/tag'
+import XSkeleton from './components/skeleton'
+import XRow from './components/row'
+import XCol from './components/col'
+import XShowmore from './components/show-more'
+import XLimit  from './components/limit-textarea'
+import XLoadingBar  from './components/loading-bar'
+import XMetaInfo  from './components/meta-info'
 
 const components = {
-  KvAlert,
-  KvBacktop,
-  KvBreadcrumbItem,
-  KvButton,
-  KvIcon,
-  KvTag,
-  KvSkeleton,
-  KvRow,
-  KvCol,
-  KvShowmore,
-  KvLimit,
-  KvLoadingBar,
-  KvMetaInfo
+  XAlert,
+  XBacktop,
+  XBreadcrumbItem,
+  XButton,
+  XIcon,
+  XTag,
+  XSkeleton,
+  XRow,
+  XCol,
+  XShowmore,
+  XLimit,
+  XLoadingBar,
+  XMetaInfo
 }
 
 const install = (Vue) => {
@@ -34,8 +34,8 @@ const install = (Vue) => {
   Object.keys(components).forEach(key => {
     Vue.component(key, components[key]);
   });
-  KvMetaInfo.install(Vue)
-  Vue.prototype.$loading = KvLoadingBar
+  XMetaInfo.install(Vue)
+  Vue.prototype.$loading = XLoadingBar
 
 }
 

@@ -38,8 +38,8 @@
         }
 
         &:last-child {
-            .kv-breadcrumb__inner,
-            .kv-breadcrumb__inner a {
+            .x-breadcrumb__inner,
+            .x-breadcrumb__inner a {
                 &, &:hover {
                     font-weight: normal;
                     color: $--color-text-regular;
@@ -47,7 +47,7 @@
                 }
             }
 
-            .kv-breadcrumb__separator {
+            .x-breadcrumb__separator {
                 display: none;
             }
         }

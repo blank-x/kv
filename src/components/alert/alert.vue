@@ -1,20 +1,20 @@
 <template>
-  <transition name="kv-alert-fade">
+  <transition name="x-alert-fade">
     <div
       :class="[typeClass, center ? 'is-center' : '', 'is-' + effect]"
-      class="kv-alert"
+      class="x-alert"
       v-show="visible">
-      <i :class="[ iconClass, isBigIcon ]" class="kv-alert__icon" v-if="showIcon"></i>
-      <div class="kv-alert__content">
-                <span :class="[ isBoldTitle ]" class="kv-alert__title" v-if="title || $slots.title">
+      <i :class="[ iconClass, isBigIcon ]" class="x-alert__icon" v-if="showIcon"></i>
+      <div class="x-alert__content">
+                <span :class="[ isBoldTitle ]" class="x-alert__title" v-if="title || $slots.title">
                   <slot name="title">{{ title }}</slot>
                 </span>
-        <p class="kv-alert__description" v-if="$slots.default && !description">
+        <p class="x-alert__description" v-if="$slots.default && !description">
           <slot></slot>
         </p>
-        <p class="kv-alert__description" v-if="description && !$slots.default">{{ description }}</p>
-        <i :class="{ 'is-customed': closeText !== '', 'kv-icon-close': closeText === '' }"
-           @click="close()" class="kv-alert__closebtn"
+        <p class="x-alert__description" v-if="description && !$slots.default">{{ description }}</p>
+        <i :class="{ 'is-customed': closeText !== '', 'x-icon-close': closeText === '' }"
+           @click="close()" class="x-alert__closebtn"
            v-show="closable">{{closeText}}</i>
       </div>
     </div>
@@ -23,12 +23,12 @@
 
 <script type="text/babel">
   const TYPE_CLASSES_MAP = {
-    'success': 'kv-icon-success',
-    'warning': 'kv-icon-warning',
-    'error': 'kv-icon-error'
+    'success': 'x-icon-success',
+    'warning': 'x-icon-warning',
+    'error': 'x-icon-error'
   };
   export default {
-    name: 'ElAlert',
+    name: 'XAlert',
 
     props: {
       title: {
@@ -78,11 +78,11 @@
 
     computed: {
       typeClass() {
-        return `kv-alert--${this.type}`;
+        return `x-alert--${this.type}`;
       },
 
       iconClass() {
-        return TYPE_CLASSES_MAP[this.type] || 'kv-icon-info';
+        return TYPE_CLASSES_MAP[this.type] || 'x-icon-info';
       },
 
       isBigIcon() {

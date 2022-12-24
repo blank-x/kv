@@ -10,7 +10,7 @@
         border-color: $--tag-primary-color;
     }
 
-    .kv-tag__close {
+    .x-tag__close {
         color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
 
         &:hover {
@@ -19,7 +19,7 @@
         }
     }
 
-    &.kv-tag--info {
+    &.x-tag--info {
         background-color: mix($--tag-info-color, $--color-white, $backgroundColorWeight);
         border-color: mix($--tag-info-color, $--color-white, $borderColorWeight);
         color: mix($--tag-info-color, $--color-white, $fontColorWeight);
@@ -28,7 +28,7 @@
             border-color: $--tag-info-color;
         }
 
-        .kv-tag__close {
+        .x-tag__close {
             color: mix($--tag-info-color, $--color-white, $fontColorWeight);
 
             &:hover {
@@ -38,7 +38,7 @@
         }
     }
 
-    &.kv-tag--success {
+    &.x-tag--success {
         background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
         border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
         color: mix($--tag-success-color, $--color-white, $fontColorWeight);
@@ -47,7 +47,7 @@
             border-color: $--tag-success-color;
         }
 
-        .kv-tag__close {
+        .x-tag__close {
             color: mix($--tag-success-color, $--color-white, $fontColorWeight);
 
             &:hover {
@@ -57,7 +57,7 @@
         }
     }
 
-    &.kv-tag--warning {
+    &.x-tag--warning {
         background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
         border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
         color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
@@ -66,7 +66,7 @@
             border-color: $--tag-warning-color;
         }
 
-        .kv-tag__close {
+        .x-tag__close {
             color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
 
             &:hover {
@@ -76,7 +76,7 @@
         }
     }
 
-    &.kv-tag--danger {
+    &.x-tag--danger {
         background-color: mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
         border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
         color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
@@ -85,7 +85,7 @@
             border-color: $--tag-danger-color;
         }
 
-        .kv-tag__close {
+        .x-tag__close {
             color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
 
             &:hover {
@@ -110,7 +110,7 @@
     box-sizing: border-box;
     white-space: nowrap;
 
-    .kv-icon-close {
+    .x-icon-close {
         border-radius: 50%;
         text-align: center;
         position: relative;
@@ -140,7 +140,7 @@
         height: 28px;
         line-height: 26px;
 
-        .kv-icon-close {
+        .x-icon-close {
             transform: scale(.8);
         }
     }
@@ -150,7 +150,7 @@
         padding: 0 8px;
         line-height: 22px;
 
-        .kv-icon-close {
+        .x-icon-close {
             transform: scale(.8);
         }
     }
@@ -160,7 +160,7 @@
         padding: 0 5px;
         line-height: 19px;
 
-        .kv-icon-close {
+        .x-icon-close {
             margin-left: -3px;
             transform: scale(.7);
         }

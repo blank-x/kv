@@ -1,11 +1,12 @@
 ::: demo
+
 ```html
+
 <div>
-  <kv-alert type="success">成功提示的文案</kv-alert>
-  <kv-alert type="info">消息提示的文案</kv-alert>
-  <kv-alert type="warning" title="警告提示的文案"></kv-alert>
-  <kv-alert type="error" title="错误提示的文案" @click="hello"></kv-alert>
-  <div @click="asfasdf"></div>
+  <x-alert type="success">成功提示的文案</x-alert>
+  <x-alert type="info">消息提示的文案</x-alert>
+  <x-alert type="warning" title="警告提示的文案"></x-alert>
+  <x-alert type="error" title="错误提示的文案"></x-alert>
 </div>
 <script>
  export default {

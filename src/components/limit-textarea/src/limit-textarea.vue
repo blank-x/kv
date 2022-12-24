@@ -1,22 +1,22 @@
 <template>
   <div style="position: relative">
     <textarea
-      :class="{'kv__limit-over': isOver}"
+      :class="{'x__limit-over': isOver}"
       :value="currentValue"
       @input="handleInput"
-      class="kv__limit--textarea"
+      class="x__limit--textarea"
       v-bind="$props"
     >
     </textarea>
-    <span class="kv__limit--text">
-      {{isOver ? '已超出' : '还可以输入'}}<span :class="{'kv__limit--num-over': isOver}" class="kv__limit--num">{{num}}</span>个字
+    <span class="x__limit--text">
+      {{isOver ? '已超出' : '还可以输入'}}<span :class="{'x__limit--num-over': isOver}" class="x__limit--num">{{num}}</span>个字
     </span>
   </div>
 </template>
 <script>
   export default {
 
-    name: 'WLimit',
+    name: 'XLimit',
 
     props: {
       placeholder: {

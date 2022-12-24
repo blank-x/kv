@@ -2,8 +2,8 @@
   <button
     :autofocus="autofocus"
     :class="[
-      type ? 'kv-button--' + type : '',
-      buttonSize ? 'kv-button--' + buttonSize : '',
+      type ? 'x-button--' + type : '',
+      buttonSize ? 'x-button--' + buttonSize : '',
       {
         'is-disabled': buttonDisabled,
         'is-loading': loading,
@@ -15,9 +15,9 @@
     :disabled="buttonDisabled || loading"
     :type="nativeType"
     @click="handleClick"
-    class="kv-button"
+    class="x-button"
   >
-    <i class="kv-icon-loading" v-if="loading"></i>
+    <i class="x-icon-loading" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
