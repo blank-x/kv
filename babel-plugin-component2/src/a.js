@@ -1,5 +1,6 @@
-import { Button } from 'element-ui';
-Vue.component(Button.name,Button)
+import {Button} from 'element-ui';
+
+Vue.component(Button.name, Button)
 
 
 

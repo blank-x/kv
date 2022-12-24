@@ -1,44 +1,17 @@
-::: demo
-```html
-<kv-tag
-  :key="tag.name"
-  v-for="tag in dynamicTags"
-  closable
-  :disable-transitions="false"
-  @close="handleClose(tag)" :type="tag.color">
-  {{tag.name}}
-</kv-tag>
-<script>
-var sdsdsd = 1
-export default {
-    data() {
-      return {
-        dynamicTags: [{
-            name: '标签一',
-            color: 'primary' 
-        }, {
-           name: '标签二',
-           color: 'success' 
-        }, {
-           name: '标签三',
-           color: 'info'           
-        }, {
-            name: '标签四',
-            color: 'danger'
-        }]
-      };
-    },
-    methods: {
-      handleClose(tag) {
-        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
-      }
-    }
-  }
-</script>
-<style>
-.kv-tag{
-    margin-right: 8px;    
-}   
-</style>
 ```
-:::
+const ensureVPre = function (markdown) {
+	if (markdown && markdown.renderer && markdown.renderer.rules) {
+		const rules = ['code_inline', 'code_block', 'fence']
+		const rendererRules = markdown.renderer.rules
+		rules.forEach(function (rule) {
+			if (typeof rendererRules[rule] === 'function') {
+				const saved = rendererRules[rule]
+				rendererRules[rule] = function () {
+					return saved.apply(this, arguments).replace(/(<pre|<code)/g, '$1 v-pre')
+				}
+			}
+		})
+	}
+}
+ensureVPre(parser)
+```

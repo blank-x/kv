@@ -1,5 +1,5 @@
 <template>
-  <div class="kv-breadcrumb" aria-label="Breadcrumb" role="navigation">
+  <div aria-label="Breadcrumb" class="kv-breadcrumb" role="navigation">
     <slot></slot>
   </div>
 </template>

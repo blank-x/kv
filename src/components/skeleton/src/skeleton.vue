@@ -1,10 +1,10 @@
 <template>
-  <div class="w__skeleton" :style="{background: bgColor, paddingBottom, width}">
+  <div :style="{background: bgColor, paddingBottom, width}" class="w__skeleton">
   </div>
 </template>
 
 <script>
-  export default{
+  export default {
     name: 'WSkeleton',
     props: {
       proportion: {
@@ -24,9 +24,9 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
-          paddingBottom: this.height || `${this.proportion * 100}%`
+        paddingBottom: this.height || `${this.proportion * 100}%`
       }
     }
   }

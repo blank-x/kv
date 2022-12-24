@@ -5,6 +5,7 @@
   <kv-alert type="info">消息提示的文案</kv-alert>
   <kv-alert type="warning" title="警告提示的文案"></kv-alert>
   <kv-alert type="error" title="错误提示的文案" @click="hello"></kv-alert>
+  <div @click="asfasdf"></div>
 </div>
 <script>
  export default {

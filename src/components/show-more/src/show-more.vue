@@ -28,18 +28,18 @@
       },
       allowFold: Boolean
     },
-    data () {
+    data() {
       return {
         textLen: this.len
       }
     },
     methods: {
-      showMore () {
+      showMore() {
         this.textLen = this.textLen === this.text.length ? this.len : this.text.length
       }
     },
     filters: {
-      filterText (value, textLen) {
+      filterText(value, textLen) {
         if (textLen !== -1 && textLen < value.length) {
           return value.substring(0, textLen) + '...'
         }

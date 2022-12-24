@@ -1,10 +1,6 @@
 <template>
   <button
-    class="kv-button"
-    @click="handleClick"
-    :disabled="buttonDisabled || loading"
     :autofocus="autofocus"
-    :type="nativeType"
     :class="[
       type ? 'kv-button--' + type : '',
       buttonSize ? 'kv-button--' + buttonSize : '',
@@ -16,6 +12,10 @@
         'is-circle': circle
       }
     ]"
+    :disabled="buttonDisabled || loading"
+    :type="nativeType"
+    @click="handleClick"
+    class="kv-button"
   >
     <i class="kv-icon-loading" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>

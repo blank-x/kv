@@ -62,7 +62,11 @@ module.exports = {
           "name": "show-more",
           "path": "/showMore"
         },
-
+        {
+          "desc": "Limit 限制输入域",
+          "name": "limit-textarea",
+          "path": "/limit"
+        },
         {
           "desc": "alert 警告",
           "name": "alert",
@@ -73,6 +77,17 @@ module.exports = {
           "desc": "skeleton 骨架屏",
           "name": "skeleton",
           "path": "/skeleton"
+        },
+        {
+          "desc": "metaInfo 要素",
+          "name": "meta-info",
+          "path": "/meta-info"
+        },
+
+        {
+          "desc": "LoadingBar 加载进度条",
+          "name": "loading-bar",
+          "path": "/loadingBar"
         }
       ]
     }

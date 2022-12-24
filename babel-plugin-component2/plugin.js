@@ -1,4 +1,4 @@
-const { addSideEffect, addDefault } = require('@babel/helper-module-imports');
+const {addSideEffect, addDefault} = require('@babel/helper-module-imports');
 const resolve = require('path').resolve;
 const isExist = require('fs').existsSync;
 const cache = {};
@@ -6,7 +6,7 @@ const cachePath = {};
 const importAll = {};
 
 function core(defaultLibraryName) {
-  return ({ types }) => {
+  return ({types}) => {
     let specified;
     let libraryObjs;
     let selectedMethods;
@@ -27,8 +27,8 @@ function core(defaultLibraryName) {
 
         if (Array.isArray(opts)) {
           options = opts.find(option =>
-              moduleArr[methodName] === option.libraryName ||
-              libraryObjs[methodName] === option.libraryName
+            moduleArr[methodName] === option.libraryName ||
+            libraryObjs[methodName] === option.libraryName
           ); // eslint-disable-line
         }
         options = options || opts;
@@ -63,7 +63,7 @@ function core(defaultLibraryName) {
         }
         const _path = path;
 
-        selectedMethods[methodName] = addDefault(file.path, path, { nameHint: methodName });
+        selectedMethods[methodName] = addDefault(file.path, path, {nameHint: methodName});
         if (styleLibrary && typeof styleLibrary === 'object') {
           styleLibraryName = styleLibrary.name;
           isBaseStyle = styleLibrary.base;
@@ -75,16 +75,16 @@ function core(defaultLibraryName) {
           if (!cachePath[libraryName]) {
             const themeName = styleLibraryName.replace(/^~/, '');
             cachePath[libraryName] = styleLibraryName.indexOf('~') === 0
-                ? resolve(process.cwd(), themeName)
-                : `${libraryName}/${libDir}/${themeName}`;
+              ? resolve(process.cwd(), themeName)
+              : `${libraryName}/${libDir}/${themeName}`;
           }
 
           if (libraryObjs[methodName]) {
             /* istanbul ingore next */
             if (cache[libraryName] === 2) {
               throw Error('[babel-plugin-component] If you are using both' +
-                  'on-demand and importing all, make sure to invoke the' +
-                  ' importing all first.');
+                'on-demand and importing all, make sure to invoke the' +
+                ' importing all first.');
             }
             if (styleRoot) {
               path = `${cachePath[libraryName]}${styleRoot}${ext}`;
@@ -112,7 +112,7 @@ function core(defaultLibraryName) {
             }
           }
 
-          addDefault(file.path, path, { nameHint: methodName });
+          addDefault(file.path, path, {nameHint: methodName});
         } else {
           if (style === true) {
             addSideEffect(file.path, `${path}/style${ext}`);
@@ -153,9 +153,9 @@ function core(defaultLibraryName) {
           selectedMethods = Object.create(null);
           moduleArr = Object.create(null);
         },
-        ImportDeclaration(path, { opts }) {
-          const { node } = path;
-          const { value } = node.source;
+        ImportDeclaration(path, {opts}) {
+          const {node} = path;
+          const {value} = node.source;
           let result = {};
 
           if (Array.isArray(opts)) {
@@ -179,9 +179,9 @@ function core(defaultLibraryName) {
           }
         },
         CallExpression(path, state) {
-          const { node } = path;
+          const {node} = path;
           const file = (path && path.hub && path.hub.file) || (state && state.file);
-          const { name } = node.callee;
+          const {name} = node.callee;
 
           if (types.isIdentifier(node.callee)) {
             if (specified[name]) {
@@ -189,7 +189,7 @@ function core(defaultLibraryName) {
             }
           } else {
             node.arguments = node.arguments.map(arg => {
-              const { name: argName } = arg;
+              const {name: argName} = arg;
               if (specified[argName]) {
                 return importMethod(specified[argName], file, state.opts);
               } else if (libraryObjs[argName]) {
@@ -200,7 +200,7 @@ function core(defaultLibraryName) {
           }
         },
         MemberExpression(path, state) {
-          const { node } = path;
+          const {node} = path;
           const file = (path && path.hub && path.hub.file) || (state && state.file);
 
           if (libraryObjs[node.object.name] || specified[node.object.name]) {

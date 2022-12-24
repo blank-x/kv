@@ -1,25 +1,25 @@
-
 <template>
-  <header class="page-header" :style="$route.name === 'index' ? 'box-shadow:none' : 'box-shadow:0 10px 60px 0 rgba(29,29,31,0.07)'">
+  <header :style="$route.name === 'index' ? 'box-shadow:none' : 'box-shadow:0 10px 60px 0 rgba(29,29,31,0.07)'"
+          class="page-header">
 
     <div class="header-container">
-        <router-link :to="{name: 'index'}"><img src="../assets/img/logo.jpg" width="100"></router-link>
-       <router-link :to="{name: 'giud'}">组件</router-link>
+      <router-link :to="{name: 'index'}"><img src="../assets/img/logo.jpg" width="100"></router-link>
+      <router-link :to="{name: 'giud'}">组件</router-link>
     </div>
   </header>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {}
     }
   }
 </script>
-<style type="text/scss" lang="scss">
+<style lang="scss" type="text/scss">
   .page-header {
     background-color: #fff;
-    box-shadow: 0 10px 60px 0 rgba(29,29,31,0.07);
+    box-shadow: 0 10px 60px 0 rgba(29, 29, 31, 0.07);
     opacity: 0.98;
     position: relative !important;
     top: 0;
@@ -28,7 +28,8 @@
     height: 80px;
     transition: all .3s;
     z-index: 100;
-    .header-container{
+
+    .header-container {
       width: 90%;
       margin: 0 auto;
       display: flex;

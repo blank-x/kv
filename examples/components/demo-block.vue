@@ -1,20 +1,20 @@
 <template>
   <div class="docs-demo-wrapper">
-      <div class="source">
-          <slot name="source"></slot>
-      </div>
-      <div :style="{height: isExpand ? 'auto' : '0'}" class="demo-container">
-        <div span="14">
-          <div class="docs-demo docs-demo--expand">
-            <div class="highlight-wrapper">
-                <div class="highlight">
-                    <slot name="highlight"></slot>
-                </div>
+    <div class="source">
+      <slot name="source"></slot>
+    </div>
+    <div :style="{height: isExpand ? 'auto' : '0'}" class="demo-container">
+      <div span="14">
+        <div class="docs-demo docs-demo--expand">
+          <div class="highlight-wrapper">
+            <div class="highlight">
+              <slot name="highlight"></slot>
             </div>
           </div>
         </div>
       </div>
-    <span class="docs-trans docs-demo__triangle" @click="toggle">{{isExpand ? '隐藏代码' : '显示代码'}}</span>
+    </div>
+    <span @click="toggle" class="docs-trans docs-demo__triangle">{{isExpand ? '隐藏代码' : '显示代码'}}</span>
   </div>
 </template>
 
@@ -38,11 +38,13 @@
   .demo-container {
     transition: max-height .3s ease;
     overflow: hidden;
-      margin-top: 10px;
+    margin-top: 10px;
   }
-  .source{
-      margin-top: 10px;
+
+  .source {
+    margin-top: 10px;
   }
+
   .docs-demo {
     width: 100%;
     height: auto;
@@ -51,12 +53,14 @@
     background-color: #F7F7F7;
     border: 1px solid #e2ecf4;
     border-top: none;
+
     pre code {
-      font-family: Consolas,Menlo,Courier,monospace;
+      font-family: Consolas, Menlo, Courier, monospace;
       line-height: 22px;
       border: none;
     }
   }
+
   .docs-trans {
     cursor: pointer;
     width: 100%;
@@ -69,18 +73,18 @@
   }
 
   .docs-demo__code,
-
   .docs-demo__meta {
     padding: 0 20px;
   }
 
-  .highlight-wrapper{
-      overflow-y: auto;
+  .highlight-wrapper {
+    overflow-y: auto;
   }
 
   .docs-demo__code {
     border-bottom: 1px solid #eee;
   }
+
   .docs-demo.docs-demo--expand .docs-demo__meta {
     border-bottom: 1px dashed #e9e9e9;
   }
@@ -113,8 +117,8 @@
 
   .docs-demo__code__mobi__header {
     border-radius: 4px 4px 0 0;
-    background: -webkit-linear-gradient(rgba(55,55,55,.98),#545456);
-    background: linear-gradient(rgba(55,55,55,.98),#545456);
+    background: -webkit-linear-gradient(rgba(55, 55, 55, .98), #545456);
+    background: linear-gradient(rgba(55, 55, 55, .98), #545456);
     text-align: center;
     padding: 8px;
 

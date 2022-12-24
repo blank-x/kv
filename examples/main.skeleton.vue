@@ -15,8 +15,8 @@
   </div>
 </template>
 <script>
-  export default{
-    data () {
+  export default {
+    data() {
       return {
         msg: 'hello vue'
       }
@@ -30,11 +30,13 @@
     text-align: center;
     padding: 100px 0;
   }
+
   .skeleton-bottom {
     width: 960px;
     margin: 0 auto;
     text-align: center;
   }
+
   .skeleton {
     margin: 0 auto;
     width: 300px;
